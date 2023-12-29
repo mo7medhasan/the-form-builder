@@ -1,17 +1,15 @@
-import { Separator } from '@/components/ui/separator'
-import Image from 'next/image'
-import { Suspense } from 'react'
+import AddForm from "@/components/forms/AddForm";
 
 export default function Home() {
-  return (
-    <div className="container pt-4">
   
-      <Separator className="my-6" />
-      <h2 className="text-4xl font-bold col-span-2">Your forms</h2>
-      <Separator className="my-6" />
-      <div className="grid gric-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-   
+
+  
+  return (
+    <div className="container min-h-screen w-full flex justify-center items-center">
+      <div className="bg-[#fefefe] max-w-md shadow-xl h-[90%] w-full p-4 lg:p-8 rounded-2xl border-[0.5px] grid">
+      <AddForm/> 
+
       </div>
     </div>
-  )
+  );
 }

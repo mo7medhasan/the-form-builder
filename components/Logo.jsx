@@ -5,7 +5,7 @@ function Logo() {
   return (
     <Link
       href={"/"}
-      className="font-bold text-3xl bg-gradient-to-r from-indigo-400 to-cyan-400 text-transparent bg-clip-text hover:cursor-pointer font-Petit"
+      className="font-bold text-3xl bg-gradient-to-r from-[#d56da1] to-[#d153ea] text-transparent bg-clip-text hover:cursor-pointer font-Petit"
     >
       FormBuilder
     </Link>

@@ -26,7 +26,7 @@ module.exports = {
         Natasha: ["var(--font-Natashawalke)"],
         Petit: ["var(--font-PetitCochon)"],
       },
-      colors: {
+      colors: {black: '#232323',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

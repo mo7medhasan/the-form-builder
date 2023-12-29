@@ -3,6 +3,7 @@ import "./globals.css";
 
 import { Montserrat } from "next/font/google";
 import localFont from "next/font/local";
+import { Toaster } from "@/components/ui/toaster";
 
 // Font files can be colocated inside of `app`
 const Natashawalke = localFont({
@@ -34,11 +35,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <ClerkProvider>
-      <html
-        lang="en"
-    
-      >
-        <body     className={`${montserrat.variable}  ${Natashawalke.variable}  ${PetitCochon.variable} `}>{children}</body>
+      <html lang="en">
+        <body
+          className={`${montserrat.variable}  ${Natashawalke.variable}  ${PetitCochon.variable} `}
+        >
+          {children}
+          <Toaster />
+        </body>
       </html>
     </ClerkProvider>
   );
