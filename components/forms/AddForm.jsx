@@ -26,15 +26,13 @@ import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "../ui/use-toast"
 import { CreateForm } from "@/actions/form"
-// import { getUser } from "@/utils/supabaseRequests"
-// import { useEffect, useMemo, useState } from "react"
+
 // import { currentUser } from "@clerk/nextjs"
 
 const formSchema = z.object({
   name: z.string().min(2),
 })
 function AddForm() {
-// const [token, setToken] = useState(null)
 
 
 
