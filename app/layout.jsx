@@ -38,7 +38,7 @@ export default function RootLayout({ children }) {
     <ClerkProvider>
       <html lang="en">
         <body
-          className={`${montserrat.variable}  ${Natashawalke.variable}  ${PetitCochon.variable} `}
+          className={`${montserrat.variable}  ${Natashawalke.variable}  ${PetitCochon.variable}`}
         > <FormsProvider>
           {children}
           <Toaster />
