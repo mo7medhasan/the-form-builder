@@ -26,15 +26,14 @@ import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "../ui/use-toast"
 import { CreateForm } from "@/actions/form"
-
-// import { currentUser } from "@clerk/nextjs"
+import { useRouter } from "next/navigation"
 
 const formSchema = z.object({
   name: z.string().min(2),
 })
 function AddForm() {
 
-
+const router=useRouter()
 
     const form = useForm({
         resolver: zodResolver(formSchema),
@@ -55,8 +54,8 @@ function AddForm() {
             title: "Success",
             description: `Form created successfully ${dataForm[0]?.id}`,
           });
-          // form.reset()
-        //   router.push(`/builder/${dataForm[0]?.id}`);
+          form.reset()
+          router.push(`/builder/${dataForm[0]?.id}`);
         
         } catch (error) {
           toast({
