@@ -25,13 +25,15 @@ import * as z from "zod"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "../ui/use-toast"
-import { CreateForm } from "@/actions/form"
 import { useRouter } from "next/navigation"
+import { useContext } from "react"
+import { FormsContext } from "@/context/FormContext"
 
 const formSchema = z.object({
   name: z.string().min(2),
 })
 function AddForm() {
+  const { createForm } = useContext(FormsContext);
 
 const router=useRouter()
 
@@ -48,7 +50,7 @@ const router=useRouter()
         try {
           const {name} =values
        
-          const  dataForm =await CreateForm({name});
+          const  dataForm =await createForm({name});
           
           toast({
             title: "Success",

@@ -25,8 +25,8 @@ border-[0.5px]`}
         </div>
 
         <div className="flex gap-x-2 items-center">
-          <FaRegEdit className="w-6 h-6  fill-black" />
-          <button type="button" onClick={(e)=>handleDelete(e)} >
+        <Link href={`/builder/${form?.id}`}>  <FaRegEdit className="w-6 h-6  fill-black" />
+        </Link>  <button type="button" onClick={(e)=>handleDelete(e)} >
           <MdDelete className="w-6 h-6  fill-red-400"/>
        </button> </div>
       </div>

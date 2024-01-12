@@ -45,9 +45,30 @@ if(user){fetchData()}
 
   }, [user]);
 
-  const createForm = async (formData) => {
-    // ... implementation for creating a form using Supabase
-  };
+  const createForm = async ({name}) => {
+    const { data, error } = await supabaseClient
+    .from("Forms")
+    .insert([
+      {
+        user_id: user.id,
+        name: name,
+        published: false,
+        submissions: 0,
+        shareURL: "",
+      },
+    ])
+    .select();
+  if (!data) {
+    throw new Error("something went wrong");
+  }
+
+  if (error) {
+    throw new Error(`something went wrong ${error}`);
+  }
+
+  setForms((prev)=>[data[0],...prev])
+  return data;  
+};
 
   const updateForm = async (formId, formData) => {
     // ... implementation for updating a form using Supabase
