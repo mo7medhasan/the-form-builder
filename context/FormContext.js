@@ -74,6 +74,21 @@ if(user){fetchData()}
     // ... implementation for updating a form using Supabase
   };
 
+  const deleteForm = async (formId) => {
+
+    const { error,data } = await supabaseClient
+      .from("Forms")
+      .delete()
+      .eq("id", formId)
+      .eq("user_id", user.id);
+    if (error) {
+      throw error;
+    }
+    setForms((prev)=>prev.filter(prev=>prev.id!==formId))
+    console.log("Row deleted successfully:", data);
+    return {data,error}
+  };
+
   // ... other methods for handling forms and fields
 
   return (
@@ -83,7 +98,7 @@ if(user){fetchData()}
         forms,
         // fields,
         createForm,
-        updateForm,
+        updateForm,deleteForm,
         // ... other methods
       }}
     >
