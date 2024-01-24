@@ -7,7 +7,6 @@ import { FormsContext } from "@/context/FormContext";
 export default  function FormCards() {
   const { forms } = useContext(FormsContext);
 
-  // const forms=await GetForms()
   return (
     <>
       {forms.map((form) => (
