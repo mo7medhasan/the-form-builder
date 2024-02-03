@@ -6,7 +6,6 @@ import localFont from "next/font/local";
 import { Toaster } from "@/components/ui/toaster";
 import {  FormsProvider } from "@/context/FormContext";
 
-// Font files can be colocated inside of `app`
 const Natashawalke = localFont({
   src: [
     { path: "./fonts/NatashaWalker-Bold.woff", weight: "bold" },

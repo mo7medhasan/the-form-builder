@@ -70,6 +70,20 @@ if(user){fetchData()}
   return data;  
 };
 
+const getForm = async (formId) => {
+  const { data, error } = await supabaseClient
+  .from("Forms").eq("id", formId).select().eq("user_id", user.id)
+  if (!data) {
+    throw new Error("something went wrong");
+  }
+
+  if (error) {
+    throw new Error(`something went wrong ${error}`);
+  }
+
+  return { data, error };
+         
+};
   const updateForm = async (formId, formData) => {
     // ... implementation for updating a form using Supabase
   };
