@@ -9,7 +9,7 @@ export default function Home() {
         <div className=" w-full px-4 lg:px-8 pb-4 lg:pb-8">
           <AddForm />
         </div>
-        <Separator className="w-full" />
+        <Separator className="w-full flex-1" />
         <div className=" grid gap-y-1">
           <FormCards />
         </div>
